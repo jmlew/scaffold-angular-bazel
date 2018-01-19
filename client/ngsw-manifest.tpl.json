@@ -1,0 +1,10 @@
+{
+  "static": {
+    "urls": {
+      "/app_bundle.js": "hash:experimental/users/jasonlewis/scaffolding/angular/example-routing-basic/client/app_bundle.js",
+      "/styles/material-theme.css": "hash:experimental/users/jasonlewis/scaffolding/angular/example-routing-basic/client/styles/material-theme.css",
+      "/styles/global.css": "hash:experimental/users/jasonlewis/scaffolding/angular/example-routing-basic/client/styles/global.css",
+      "/index.html": "hash:experimental/users/jasonlewis/scaffolding/angular/example-routing-basic/client/index.html"
+    }
+  }
+}

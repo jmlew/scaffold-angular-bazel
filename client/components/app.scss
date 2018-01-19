@@ -1,0 +1,18 @@
+@import '../styles/variables';
+
+.jl-sidenav-container {
+  height: 100%;
+  top: $header-height;
+
+  .mat-sidenav {
+    min-width: 200px;
+  }
+
+  .jl-sidenav-content {
+    padding: 20px;
+  }
+}
+
+.jl-router-container {
+  padding: 10px 30px;
+}

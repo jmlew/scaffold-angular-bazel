@@ -1,0 +1,31 @@
+experimental/users/jasonlewis/scaffolding/angular/example-routing-basic/scaffolding/client/
+
+BUILD
+README.md
+tsconfig.json (symlink)
+index.html
+main.ts
+components/
+  app_module.ts
+  app.ts
+  app.ng.html
+  foo/
+    BUILD
+    foo.ng.html
+    foo.scss
+    foo_module.ts
+    foo.ts
+    foo_test.ts
+  bar/
+    BUILD
+    bar.ng.html
+    bar.scss
+    bar_module.ts
+    bar.ts
+    bar_test.ts
+services/
+  baz/
+    BUILD
+    baz_module.ts
+    baz.ts
+    baz_test.ts

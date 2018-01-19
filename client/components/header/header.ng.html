@@ -1,0 +1,40 @@
+<md-toolbar class="jl-header-toolbar mat-elevation-z3" color="primary">
+
+  <button md-icon-button (click)="onMenuBtnClick()">
+    <md-icon>menu</md-icon>
+  </button>
+
+  <a class="jl-header-logo" routerLink="/{{rootPageConfig.home.name}}">
+    <img src="./images/googleg_light_color_48dp.png">
+  </a>
+
+  <section class="jl-header-title" fxLayout="row" fxLayoutAlign="start center">
+    <h2>{{appName}}</h2>
+    <h3 *ngIf="currentPage && currentPage.name !== rootPageConfig.home.name">
+      {{currentPage.name}}</h3>
+  </section>
+
+  <span class="jl-flex-spacer"></span>
+
+  <section *ngIf="currentPage" [ngSwitch]="currentPage.name">
+    <nav *ngSwitchCase="rootPageConfig.foo.name">
+      <button md-button
+        [disabled]="currentSecondaryPage &&
+                    currentSecondaryPage.name === secondaryPageConfig.fooone.name"
+        routerLink="{{secondaryPageConfig.fooone.path}}">
+        FOO SUBPAGE ONE
+      </button>
+      <button md-button
+        [disabled]="currentSecondaryPage &&
+                    currentSecondaryPage.name === secondaryPageConfig.footwo.name"
+        routerLink="{{secondaryPageConfig.footwo.path}}">
+        FOO SUBPAGE TWO
+      </button>
+    </nav>
+
+    <nav *ngSwitchCase="rootPageConfig.bar.name">
+      <!-- Bar header content here -->
+    </nav>
+  </section>
+
+</md-toolbar>

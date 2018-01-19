@@ -1,0 +1,19 @@
+<jl-header (onMenuClick)="sideNav.toggle()"></jl-header>
+<md-sidenav-container class="jl-sidenav-container">
+  <md-sidenav mode="push" #sideNav>
+     <jl-sidenav (onItemClick)="sideNav.close()"></jl-sidenav>
+  </md-sidenav>
+  <div class="jl-sidenav-content">
+    <div class="jl-router-container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</md-sidenav-container>
+
+
+
+
+
+
+
+

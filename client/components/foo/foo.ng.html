@@ -1,0 +1,51 @@
+<h1>Stare in awe at the {{appName}} Foo page!</h1>
+<p class="mat-body" *ngIf="currentSecondaryPage">
+  <i>(Displaying the <b>{{currentSecondaryPage.name}}</b> subcomponent view below)</i>
+</p>
+
+<div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="25px">
+  <p>Choose your navigation style!</p>
+  <md-radio-group [(ngModel)]="currentMenuStyle"
+    fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+    <md-radio-button [value]="MenuStyle.Tabs">Tab Nav Bar</md-radio-button>
+    <md-radio-button [value]="MenuStyle.Buttons">Buttons</md-radio-button>
+  </md-radio-group>
+</div>
+<div class="jl-divider"></div>
+
+<!-- Showing the use of Tabs and opting for declarative router navigation (using routerLink within the view) -->
+<nav md-tab-nav-bar *ngIf="currentMenuStyle === MenuStyle.Tabs">
+  <a md-tab-link
+    routerLink="{{secondaryPageConfig.fooone.name}}"
+    routerLinkActive #rlaOne="routerLinkActive"
+    [active]="rlaOne.isActive"
+    [disabled]="rlaOne.isActive">
+    FOO SUBPAGE ONE
+  </a>
+  <a md-tab-link
+    routerLink="{{secondaryPageConfig.footwo.name}}"
+    routerLinkActive #rlaTwo="routerLinkActive"
+    [active]="rlaTwo.isActive"
+    [disabled]="rlaTwo.isActive">
+    FOO SUBPAGE TWO
+  </a>
+</nav>
+
+<!-- Showing the use of Buttons and opting for imperative router navigation (routing from the component) -->
+<div *ngIf="currentMenuStyle === MenuStyle.Buttons">
+  <button md-button color="primary"
+    (click)="onNavToChildRoute(secondaryPageConfig.fooone)"
+    [disabled]="currentSecondaryPage.name === secondaryPageConfig.fooone.name">
+    FOO SUBPAGE ONE
+  </button>
+  <button md-button color="primary"
+    (click)="onNavToChildRoute(secondaryPageConfig.footwo)"
+    [disabled]="currentSecondaryPage.name === secondaryPageConfig.footwo.name">
+    FOO SUBPAGE TWO
+  </button>
+  <div class="jl-divider"></div>
+</div>
+
+<!-- Child components embedded below -->
+<router-outlet></router-outlet>
+
